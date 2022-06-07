@@ -1,44 +1,51 @@
 import styled from 'styled-components';
-import { Button, Icon } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
-const StyledContainer = styled.div`
+const FixedHeaderFooterContainer = styled.div`
   display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  div {
-    margin: 10px 0 10px 0;
-  }
-
-  .footer {
-    padding: 20px;
-    border-top: solid 1px #aaa;
+	flex-direction: column;
+	height: 100%;
+  
+  .clearMenuStyle {
+    flexShrink: 0;
+		borderRadius: 0;
+		margin: 0;
   }
 `;
 
 const Home = () => (
-  <StyledContainer>
-    <div>
-      <h1>Next.js + Fomantic-UI!</h1>
+  <FixedHeaderFooterContainer>
+    { /* the following section is fixed to the top */}
+    <Menu
+      inverted
+      color="green"
+      borderless
+      className="clearMenuStyle">
+      <Menu.Item header>
+        Fixed Header
+      </Menu.Item>
+    </Menu>
+
+    <div
+      style={{
+        flexGrow: 1,
+        overflowX: "hidden",
+        overflowY: "auto",
+      }}>
+      <p style={{ paddingBottom: "200%" }}>This container can scroll vertically. Give it a try!</p>
+      <p>You made it to the bottom!</p>
     </div>
-    <div>
-      <Button primary>Primary</Button>
-      <Button secondary>Secondary</Button>
-    </div>
-    <div>
-      <Icon name="home" size="big" />
-      <Icon name="star" size="big" />
-      <Icon name="heart" size="big" />
-      <Icon name="ambulance" size="big" />
-      <Icon name="lightbulb" size="big" />
-    </div>
-    <div className="footer">
-      <a href="https://github.com/skydiver/nextjs-semantic/">
-        https://github.com/skydiver/nextjs-semantic/
-      </a>
-    </div>
-  </StyledContainer>
+
+    { /* the following section is fixed to the bottom */}
+    <Menu
+      inverted
+      color="green"
+      borderless
+      className="clearMenuStyle">
+      <Menu.Item header>
+        Fixed Footer
+      </Menu.Item>
+    </Menu>
+  </FixedHeaderFooterContainer>
 );
 export default Home;
