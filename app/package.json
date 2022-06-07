@@ -1,8 +1,8 @@
 {
-  "name": "nextjs-semantic",
-  "description": "Next.js + Fomantic-UI + Styled Components",
-  "version": "6.0.0",
-  "author": "Martín M.",
+  "name": "submessage-app",
+  "description": "SubMessage App",
+  "version": "0.1.0",
+  "author": "Lim Chee Kin",
   "license": "MIT",
   "scripts": {
     "dev": "next",
